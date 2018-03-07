@@ -1,0 +1,41 @@
+    Windows Registry Editor Version 5.00
+
+
+    [HKEY_CLASSES_ROOT\*\Shell\qc_file_menu]
+    "MUIVerb"="QConvert"
+    "SubCommands"="qc_converth264;qc_settings;qc_folder;qc_path;qc_uninstall"
+
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_converth264]
+    @="H264"
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_converth264\command]
+    @="\"C:\\Program Files\\QConvert\\QConvert_h264_preset.bat\" \"%1\""
+
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_settings]
+    @="Settings"
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_settings\command]
+    @="\"C:\\Program Files\\QConvert\\QConvert_change_parameters.bat\""
+
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_folder]
+    @="Open Folder"
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_folder\command]
+    @="\"C:\\Program Files\\QConvert\\QConvert_open_folder.bat\""
+
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_path]
+    @="Set FFMPEG path"
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_path\command]
+    @="\"C:\\Program Files\\QConvert\\QConvert_set_ffmpeg.bat\" \"%1\""
+
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_uninstall]
+    @="Uninstall"
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_uninstall\command]
+    @="\"C:\\Program Files\\QConvert\\QConvert_uninstall.bat\""

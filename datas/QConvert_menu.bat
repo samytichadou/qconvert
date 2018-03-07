@@ -28,12 +28,19 @@ ECHO.
 CHOICE /C 12345678 /M "Choose an Extension"
 
 IF ERRORLEVEL 8 GOTO END
-IF ERRORLEVEL 7 CALL "%~dp0QConvert_uninstall.bat"
-IF ERRORLEVEL 6 CALL "%~dp0QConvert_open_folder.bat"
-IF ERRORLEVEL 5 CALL "%~dp0QConvert_set_ffmpeg_manually.bat"
-IF ERRORLEVEL 4 CALL "%~dp0QConvert_qt_anim_setup.bat"
-IF ERRORLEVEL 3 CALL "%~dp0QConvert_prores_setup.bat"
-IF ERRORLEVEL 2 CALL "%~dp0QConvert_dnx_setup.bat"
-IF ERRORLEVEL 1 CALL "%~dp0QConvert_h264_setup.bat"
+IF ERRORLEVEL 7 (CALL "%~dp0QConvert_uninstall.bat"
+GOTO END)
+IF ERRORLEVEL 6 (CALL "%~dp0QConvert_open_folder.bat"
+GOTO END)
+IF ERRORLEVEL 5 (CALL "%~dp0QConvert_set_ffmpeg_manually.bat"
+GOTO END)
+IF ERRORLEVEL 4 (CALL "%~dp0QConvert_qt_anim_setup.bat"
+GOTO END)
+IF ERRORLEVEL 3 (CALL "%~dp0QConvert_prores_setup.bat"
+GOTO END)
+IF ERRORLEVEL 2 (CALL "%~dp0QConvert_dnx_setup.bat"
+GOTO END)
+IF ERRORLEVEL 1 (CALL "%~dp0QConvert_h264_setup.bat"
+GOTO END)
 
 END

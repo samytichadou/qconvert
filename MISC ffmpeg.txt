@@ -1,0 +1,41 @@
+ffplay -fs -noborder input
+
+
+ffprobe -v quiet -print_format json -show_format -show_streams input > output.json
+
+
+QT ANIM
+ffmpeg -i input.mp4 -codec copy -c:v qtrle output.mov
+
+
+DNXHD
+ffmpeg -i source -vf "scale=1920:1080" -vcodec dnxhd -r 23.976 -b:v 36M destination
+
+ffmpeg -i in.mp4 -c:v dnxhd -profile:v dnxhr_hq out.mov
+ffmpeg -i source -c:v dnxhd -profile:v dnxhd -b:v 36m 
+
+profils :
+ dnxhd
+ dnxhr_444
+ dnxhr_hqx
+ dnxhr_hq
+ dnxhr_sq
+ dnxhr_lb   
+
+ffmpeg.exe -i "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILLE boucle lente.mov" -c:v dnxhd -profile:v dnxhr_hq "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILLE boucle lente_dnx.mov"
+
+ffmpeg.exe -i "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILLE boucle lente.mov" -vcodec dnxhd -b:v 120M -an "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILLE boucle lente_dnx.mov" 
+
+ffmpeg.exe -i "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILLE boucle lente.mov" -c:v dnxhd -profile:v dnxhr_sq "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILLE boucle lente dnxsq.mov"	
+
+36 - 1080p25/1080p23,976/1080p24
+45 - 1080p29,7
+60 - 720p23,976
+90 - 720p23,976
+115 - 720p50/1080p23,976/1080p24
+120 - 1080i50/1080p25
+145 - 1080i59,94/720p59,94
+175 - 1080p24/1080p23,976/720p50
+185 - 1080i50/1080p25
+220 - 1080i59,94/720p59,94
+

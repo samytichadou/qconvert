@@ -39,3 +39,11 @@ ffmpeg.exe -i "C:\Users\tonton\Desktop\anims souris\anims souris\SOURIS BOUTEILL
 185 - 1080i50/1080p25
 220 - 1080i59,94/720p59,94
 
+PRORES
+http://www.transcoding.dk/2012/01/29/prores-ffmpeg/
+https://ffmpeg.org/ffmpeg-codecs.html#ProRes
+
+ffmpeg -i input.avi -c:v prores -profile:v 3 -c:a pcm_s16le output.mov
+
+IMAGE SEQUENCE
+https://leonawicz.github.io/mapmate/reference/ffmpeg.html

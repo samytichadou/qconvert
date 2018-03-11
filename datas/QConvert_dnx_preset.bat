@@ -20,8 +20,4 @@ goto :end
 
 
 :end
-echo.
-echo.
-echo Encoding Finished
-PAUSE
 END

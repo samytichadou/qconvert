@@ -36,6 +36,8 @@ EXIT
 
 :ok
 
+ECHO --- QCONVERT UNINSTALL ---
+
 ::unset ffmpeg path
 
 reg delete HKEY_CURRENT_USER\Environment /v ffmpeg /f
@@ -66,7 +68,7 @@ rmdir /s /q "%ProgramFiles%\QConvert"
 
 
 CLS
-ECHO --- QCONVERT UNINSTALL ---
+ECHO.
 ECHO.
 ECHO -Qconverty successfully uninstalled
 PAUSE

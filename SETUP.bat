@@ -27,15 +27,7 @@ EXIT
 
 :ADMINTASKS
 
-::set ffmpeg path
-
-ECHO --- QCONVERT SETUP ---
-ECHO (You can set this later by right-click menu)
-ECHO.
-set /p pa="FFMPEG "Bin" folder path (without the "\" after "bin") : "
-setx ffmpeg "%pa%\ffmpeg.exe"
-setx ffplay "%pa%\ffplay.exe"
-setx ffprobe "%pa%\ffprobe.exe"
+ECHO --- QConvert Installation ---
 
 ::set environnement variable
 
@@ -59,8 +51,5 @@ xcopy /e "%~dp0\datas\QConvert_*" "%ProgramFiles%\QConvert\"
 
 REG IMPORT "%~dp0\datas\setup.reg"
 
-CLS
-ECHO --- QCONVERT SETUP ---
-ECHO.
-echo All set ! Let's QConvert !
-PAUSE
+powershell (New-Object -ComObject Wscript.Shell).Popup("""QConvert installed - Don't forget to set ffmpeg path !""",0,"""Installation Finished""",0x40)
+END

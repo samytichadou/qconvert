@@ -4,4 +4,8 @@
 setlocal ENABLEDELAYEDEXPANSION
 set fName=%1
 
-ffmpeg -i input.mp4 -codec copy -c:v qtrle output.mov
+for /f "tokens=* delims= " %%F in ('echo %fName%') do (
+"%ffmpeg%" -i "%%~fF" -codec copy -c:v qtrle "%%~dpnF_qtrle.mov"
+)
+
+END

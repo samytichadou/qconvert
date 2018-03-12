@@ -43,19 +43,6 @@ reg delete HKEY_CURRENT_USER\Environment /v ffplay /f
 reg delete HKEY_CURRENT_USER\Environment /v ffprobe /f
 
 
-::unset environnement variable
-
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_targetrate /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_minrate /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_maxrate /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_buffersize /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_h264_profile /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_h264_extension /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_dnx_profile /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_dnxhd_bitrate /f
-reg delete HKEY_CURRENT_USER\Environment /v ffmpeg_dnx_format /f
-
-
 ::unset menu regs
 
 REGEDIT.EXE  /S  "%~dp0\QConvert_datas\QConvert_uninstall.reg"

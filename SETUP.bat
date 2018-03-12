@@ -37,19 +37,6 @@ setx ffmpeg "%pa%\ffmpeg.exe"
 setx ffplay "%pa%\ffplay.exe"
 setx ffprobe "%pa%\ffprobe.exe"
 
-::set environnement variable
-
-setx ffmpeg_targetrate "15"
-setx ffmpeg_minrate "10"
-setx ffmpeg_maxrate "20"
-setx ffmpeg_buffersize "5"
-setx ffmpeg_h264_extension "mov"
-setx ffmpeg_h264_profile "main"
-setx ffmpeg_dnx_profile "dnxhd"
-setx ffmpeg_dnxhd_bitrate "120"
-setx ffmpeg_dnx_format "mov"
-
-
 ::copy files
 
 if not exist "%ProgramFiles%\QConvert\" mkdir "%ProgramFiles%\QConvert"

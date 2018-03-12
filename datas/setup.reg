@@ -3,7 +3,7 @@
 
     [HKEY_CLASSES_ROOT\*\Shell\qc_file_menu]
     "MUIVerb"="QConvert"
-    "SubCommands"="qc_converth264;qc_convertdnx;qc_play;qc_infos;qc_menu"
+    "SubCommands"="qc_converth264;qc_convertdnx;qc_convertqtrle;qc_play;qc_infos;qc_menu"
 
     [HKEY_CLASSES_ROOT\Directory\Shell\qc_folder_menu]
     "MUIVerb"="QConvert"
@@ -20,21 +20,29 @@
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertdnx\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_dnx_preset.bat\" \"%1\""
+	
+	[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertqtrle]
+    @="QT Animation"
+	
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertqtrle\command]
+    @="\"C:\\Program Files\\QConvert\\QConvert_qtrle_preset.bat\" \"%1\""
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_play]
     @="Play"
+	"CommandFlags"=dword:00000020
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_play\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_play.bat\" \"%1\""
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_infos]
     @="Infos"
-
+	
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_infos\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_infos.bat\" \"%1\""
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_menu]
     @="Settings"
+	"CommandFlags"=dword:00000020
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_menu\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_menu.bat\""
@@ -43,4 +51,4 @@
     @="Set FFMPEG bin folder"
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_set_ffmpeg\command]
-    @="\"C:\\Program Files\\QConvert\\QConvert_set_ffmpeg.bat\" \"%1\""
+	@="\"C:\\Program Files\\QConvert\\QConvert_set_ffmpeg.bat\" \"%1\""

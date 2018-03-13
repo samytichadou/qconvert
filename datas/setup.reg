@@ -42,6 +42,7 @@
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_menu]
     @="Settings"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\test.png"
 	"CommandFlags"=dword:00000020
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_menu\command]

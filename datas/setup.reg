@@ -4,7 +4,7 @@
     [HKEY_CLASSES_ROOT\*\Shell\qc_file_menu]
     "MUIVerb"="QConvert"
     "SubCommands"="qc_converth264;qc_convertdnx;qc_convertqtrle;qc_play;qc_infos;qc_menu"
-	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_menu.png"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_menu.ico"
 
     [HKEY_CLASSES_ROOT\Directory\Shell\qc_folder_menu]
     "MUIVerb"="QConvert"
@@ -12,25 +12,28 @@
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_converth264]
     @="H264"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_convert.ico"
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_converth264\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_h264_preset.bat\" \"%1\""
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertdnx]
     @="DNX"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_convert.ico"
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertdnx\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_dnx_preset.bat\" \"%1\""
 	
 	[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertqtrle]
     @="QT Animation"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_convert.ico"
 	
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_convertqtrle\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_qtrle_preset.bat\" \"%1\""
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_play]
     @="Play"
-	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_play.png"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_play.ico"
 	"CommandFlags"=dword:00000020
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_play\command]
@@ -38,14 +41,14 @@
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_infos]
     @="Infos"
-	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_infos.png"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_infos.ico"
 	
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_infos\command]
     @="\"C:\\Program Files\\QConvert\\QConvert_infos.bat\" \"%1\""
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_menu]
     @="Settings"
-	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_settings.png"
+	"Icon"="C:\\Program Files\\QConvert\\QConvert_datas\\QConvert_settings.ico"
 	"CommandFlags"=dword:00000020
 
     [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\qc_menu\command]

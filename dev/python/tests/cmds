@@ -1,0 +1,3 @@
+python "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\single_file_conversion.py" "C:\Users\tonton\Desktop\test_qconvert\video_matrice_pass_parc.mp4" "C:\Users\tonton\qconvert_config\qconvert_presets\mjpeg_preset.json"
+
+python "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\single_file_conversion.py" "C:\Users\tonton\Desktop\test_qconvert\video_matrice_pass_parc.mp4" "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\qconvert_config\qconvert_presets\mjpeg_preset.json"

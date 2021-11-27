@@ -36,7 +36,8 @@ class QConvertSetFFMPEG:
 
     def browse_but_click(self, event):    ### (3)
         filepath = askopenfilename(filetypes=(("Windows Executable","*.exe"),("All files","*.*")))
-        self.path_ent.insert(END, filepath)
+        self.path_ent.delete(0, END)
+        self.path_ent.insert(0, filepath)
 
     def set_but_click(self, event):
         config_functions.set_ffmpeg_path(self.var_path.get())

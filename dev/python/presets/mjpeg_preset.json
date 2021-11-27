@@ -1,4 +1,0 @@
-{
-   "command":"ffmpeg -i input -c:v mjpeg -q:v 10 output -y",
-   "extension":"mov"
-}

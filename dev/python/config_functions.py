@@ -4,7 +4,6 @@ import json_functions
 def get_ffmpeg_path():
     config_dataset = json_functions.read_json(global_variables.qc_config_filepath)
     if config_dataset['ffmpeg_executable'] != "":
-        print(config_dataset['ffmpeg_executable'])
         return config_dataset['ffmpeg_executable']
     else:
         return ""
@@ -15,3 +14,10 @@ def set_ffmpeg_path(filepath):
     config_dataset['ffmpeg_executable'] = filepath
     json_functions.create_json_file(config_dataset, config_file)
     return True
+
+def get_default_extension():
+    config_dataset = json_functions.read_json(global_variables.qc_config_filepath)
+    if config_dataset['default_extension'] not in {"", " "}:
+        return config_dataset['default_extension']
+    else:
+        return ".mov"

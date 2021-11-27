@@ -13,6 +13,7 @@ class QConvertSetFFMPEG(Tk):
 
         Button(page, text = 'Manage Presets', command=lambda:self.change_page(0)).pack()
         Button(page, text = 'Set FFMPEG Path', command=lambda:self.change_page(1)).pack()
+        Label(page, text = 'Open Configuration Folder').pack()
         Button(page, text = 'About', command=lambda:self.change_page(2)).pack()
         Button(page, text = 'Quit', command = quit).pack()
 
@@ -22,6 +23,8 @@ class QConvertSetFFMPEG(Tk):
 
         Label(page, text = 'Manage Presets').pack()
         Button(page, text = 'Create Preset', command=lambda:self.change_page(4)).pack()
+        Label(page, text = 'Modify Preset').pack()
+        Label(page, text = 'Open Preset Folder').pack()
         Button(page, text = 'Back', command=lambda:self.change_page(3)).pack()
 
     def create_preset_page(self, root):

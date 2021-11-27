@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
 
-import sys
-
-print("hello")
-print(sys.executable)
+for i in range(0,10):
+    print(i)

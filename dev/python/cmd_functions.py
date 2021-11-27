@@ -1,6 +1,7 @@
 import os
 
 import config_functions
+import global_variables
 
 # get new filepath
 def get_new_filepath(filepath, preset_dataset):
@@ -36,3 +37,16 @@ def get_new_filepath(filepath, preset_dataset):
 def replace_command(command, filepath, new_filepath):
     new_command = command.replace("input", '"'+filepath+'"').replace("output", '"'+new_filepath+'"').replace("ffmpeg_path", '"'+config_functions.get_ffmpeg_path()+'"')
     return new_command
+
+# filter file for encoding
+def is_file_encodable(filepath, pattern):
+    filename = os.path.basename(filepath)
+    if os.path.splitext(filename)[1] in global_variables.video_extension \
+    or os.path.splitext(filename)[1] in global_variables.audio_extension:
+        if pattern not in ("", " ", "None"):
+            if pattern in filename:
+                return True
+        else:
+            return True
+    else:
+        return False

@@ -1,6 +1,6 @@
 {
    "command":"ffmpeg_path -i input -c:v mjpeg -q:v 10 output -y",
    "extension":".mov",
-   "suffix":"_mjpeg",
-   "prefix":""
+   "suffix":"",
+   "prefix":"mjpeg"
 }

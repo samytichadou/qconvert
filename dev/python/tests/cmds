@@ -1,3 +1,9 @@
+### single file conversion
 python "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\single_file_conversion.py" "C:\Users\tonton\Desktop\test_qconvert\video_matrice_pass_parc.mp4" "C:\Users\tonton\qconvert_config\qconvert_presets\mjpeg_preset.json"
-
 python "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\single_file_conversion.py" "C:\Users\tonton\Desktop\test_qconvert\video_matrice_pass_parc.mp4" "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\qconvert_config\qconvert_presets\mjpeg_preset.json"
+
+### folder conversion
+python "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\folder_file_conversion.py" "C:\Users\tonton\Desktop\test_qconvert\folder_test" "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\qconvert_config\qconvert_presets\mjpeg_preset.json" None
+
+### multi file
+python "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\multi_file_conversion.py" "C:\Users\tonton\Desktop\test_qconvert\folder_test\video_matrice_pass_parc - Copie (2).mp4" "C:\Users\tonton\Desktop\test_qconvert\folder_test\video_matrice_pass_parc - Copie.mp4" "C:\Users\tonton\Documents\GitHub\qconvert\dev\python\qconvert_config\qconvert_presets\mjpeg_preset.json" None

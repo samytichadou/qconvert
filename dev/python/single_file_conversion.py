@@ -6,7 +6,7 @@ import sys
 import json_functions
 import cmd_functions
 
-# arg1=filepath, arg2=json preset, arg3=suffix
+# arg1=filepath, arg2=json preset path
 
 filepath = sys.argv[1]
 preset_dataset = json_functions.read_json(sys.argv[2])

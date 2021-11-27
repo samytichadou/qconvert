@@ -1,24 +1,24 @@
-import tkinter as tk
-my_w = tk.Tk()
-my_w.geometry("250x100")  
-my_w.title("plus2net.com")  # Adding a title
+from tkinter import *
 
-l1 = tk.Label(my_w,  text='F Name (sticky=\'W\')' ) #added one Label 
-l1.grid(row=1,column=1,sticky='W') 
+ws = Tk()
+ws.title('PythonGuides')
+#ws.geometry('400x300')
+ws.config(bg='#F2B33D')
 
-e1 = tk.Entry(my_w,   width=10,bg='yellow') # added one Entry box
-e1.grid(row=1,column=2) 
+frame = Frame(ws, bg='#F2B33D')
 
-l2 = tk.Label(my_w,  text='L Name (sticky=\'E\')')  # 
-l2.grid(row=2,column=1,sticky='E') 
+Button(frame, text="7").grid(row=0, column=0, sticky='ew')
+Button(frame, text="8").grid(row=0, column=1)
+Button(frame, text="9").grid(row=0, column=2)
 
-e2 = tk.Entry(my_w,   width=10,bg='yellow') # added one Entry box
-e2.grid(row=2,column=2)
+Button(frame, text="4 ").grid(row=1, column=0)
+Button(frame, text="5").grid(row=1, column=1, ipadx=10, ipady=10, padx=10, pady=10)
+Button(frame, text="6").grid(row=1, column=2)
 
-l3 = tk.Label(my_w,  text='Add Door No and Street address')   
-l3.grid(row=3,column=1,sticky='W') 
+Button(frame, text="7 ").grid(row=2, column=0)
+Button(frame, text="8").grid(row=2, column=1)
+Button(frame, text="9").grid(row=2, column=2)
 
-e3 = tk.Entry(my_w,   width=10,bg='yellow') # added one Entry box
-e3.grid(row=3,column=2)
+frame.pack(expand=True) 
 
-my_w.mainloop()
+ws.mainloop()

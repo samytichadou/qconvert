@@ -1,5 +1,6 @@
 import global_variables
 import json_functions
+import os
 
 def get_ffmpeg_path():
     config_dataset = json_functions.read_json(global_variables.qc_config_filepath)
@@ -21,3 +22,7 @@ def get_default_extension():
         return config_dataset['default_extension']
     else:
         return ".mov"
+
+def open_folder(folderpath):
+    os.startfile(folderpath)
+    return True

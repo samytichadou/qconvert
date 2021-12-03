@@ -4,6 +4,7 @@ from tkinter import *
 import webbrowser
 import config_functions
 import json_functions
+import global_variables
 from tkinter.filedialog import askopenfilename
 
 class QConvertSetFFMPEG(Tk):
@@ -13,7 +14,7 @@ class QConvertSetFFMPEG(Tk):
 
         Button(page, text = 'Manage Presets', command=lambda:self.change_page(0)).pack()
         Button(page, text = 'Set FFMPEG Path', command=lambda:self.change_page(1)).pack()
-        Label(page, text = 'Open Configuration Folder').pack()
+        Button(page, text = 'Open Configuration Folder', command=lambda:config_functions.open_folder(global_variables.qc_dir)).pack()
         Button(page, text = 'About', command=lambda:self.change_page(2)).pack()
         Button(page, text = 'Quit', command = quit).pack()
 
@@ -24,7 +25,7 @@ class QConvertSetFFMPEG(Tk):
         Label(page, text = 'Manage Presets').pack()
         Button(page, text = 'Create Preset', command=lambda:self.change_page(4)).pack()
         Label(page, text = 'Modify Preset').pack()
-        Label(page, text = 'Open Preset Folder').pack()
+        Button(page, text = 'Open Preset Folder', command=lambda:config_functions.open_folder(global_variables.qc_presets_dir)).pack()
         Button(page, text = 'Back', command=lambda:self.change_page(3)).pack()
 
     def create_preset_page(self, root):
@@ -63,7 +64,7 @@ class QConvertSetFFMPEG(Tk):
             var_prefix.get(),
         )).grid(row=10, column=1)
 
-        page.pack()
+        page.grid()
 
     def set_ffmpeg_page(self, root):
         page = Frame(root)

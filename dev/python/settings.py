@@ -50,19 +50,20 @@ class QConvertSetFFMPEG(Tk):
         Label(page, text = 'Prefix').grid(row=5, column=0, sticky='w')
         Entry(page, textvariable = var_prefix).grid(row=5, column=1)
 
+        Label(page, text = '').grid(sticky='w')
         Label(page, text = 'Help :').grid(sticky='w')
         Label(page, text = 'ffmpeg_path to use specific executable').grid(sticky='w')
         Label(page, text = 'input/output for file in/out').grid(sticky='w')
         Label(page, text = '-y at the end to automatically overwrite file').grid(sticky='w')
         
-        Button(page, text = 'Back', command=lambda:self.change_page(0)).grid(row=10, column=0)
+        Button(page, text = 'Back', command=lambda:self.change_page(0)).grid(row=11, column=0)
         Button(page, text = 'Create', command=lambda:json_functions.create_preset(
             var_name.get(),
             var_command.get(),
             var_extension.get(),
             var_suffix.get(),
             var_prefix.get(),
-        )).grid(row=10, column=1)
+        )).grid(row=11, column=1)
 
         page.grid()
 

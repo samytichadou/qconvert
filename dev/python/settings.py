@@ -34,7 +34,7 @@ class QConvertSetFFMPEG(Tk):
         Label(page, text = 'Create Preset').grid(row=0)
         
         var_name = StringVar(value="new_preset")
-        var_command = StringVar(value="ffmpeg_path -i input command output")
+        var_command = StringVar(value="ffmpeg_path -i input command output -y")
         var_extension = StringVar(value=".mov")
         var_suffix = StringVar(value="_qconvert")
         var_prefix = StringVar(value="")
@@ -52,9 +52,9 @@ class QConvertSetFFMPEG(Tk):
 
         Label(page, text = '').grid(sticky='w')
         Label(page, text = 'Help :').grid(sticky='w')
-        Label(page, text = 'ffmpeg_path to use specific executable').grid(sticky='w')
-        Label(page, text = 'input/output for file in/out').grid(sticky='w')
-        Label(page, text = '-y at the end to automatically overwrite file').grid(sticky='w')
+        Label(page, text = '"ffmpeg_path" to use specific executable').grid(sticky='w')
+        Label(page, text = '"input"/"output" for file in/out').grid(sticky='w')
+        Label(page, text = '"-y" at the end to automatically overwrite file').grid(sticky='w')
         
         Button(page, text = 'Back', command=lambda:self.change_page(0)).grid(row=11, column=0)
         Button(page, text = 'Create', command=lambda:json_functions.create_preset(

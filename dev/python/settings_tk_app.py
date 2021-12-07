@@ -6,12 +6,32 @@ import config_functions
 import json_functions
 import global_variables
 from tkinter import *
+import tkinter.font as tkfont
 from tkinter.filedialog import askopenfilename
 
+# tk program
+root = Tk()
+
+# icons
+qc_icon_photo = PhotoImage(file = os.path.join(global_variables.qc_icons_dir, "qc_icon.png"))
+
+# set and start
+root.iconphoto(False, qc_icon_photo)
+#root.iconbitmap(os.path.join(global_variables.qc_icons_dir, "qconvert_convert.ico"))
+root.minsize(300, 5)
+root.resizable(0,0)
+root.title('Settings')
+
+# fonts
+title_font = tkfont.Font(size=15, weight='bold')
+
 class QConvertSettings(Tk):
+    
     def __init__(self, root):
         page = Frame(root)
         page.pack()
+
+        Label(page, text = 'Menu', font=title_font).pack(pady=10)
 
         Button(page, text = 'Manage Presets', command=lambda:self.change_page(0)).pack()
         Button(page, text = 'FFMPEG Settings', command=lambda:self.change_page(1)).pack()
@@ -23,7 +43,8 @@ class QConvertSettings(Tk):
         page = Frame(root)
         page.pack()
 
-        Label(page, text = 'Manage Presets').pack()
+        Label(page, text = 'Manage Presets', font=title_font).pack(pady=10)
+
         Button(page, text = 'Create Preset', command=lambda:self.change_page(4)).pack()
         Label(page, text = 'Modify Preset').pack()
         Label(page, text = 'Apply Presets to Right Click Entries').pack()
@@ -33,7 +54,7 @@ class QConvertSettings(Tk):
     def create_preset_page(self, root):
         page = Frame(root)
 
-        Label(page, text = 'Create Preset').grid(row=0)
+        Label(page, text = 'Create Preset', font=title_font).grid(row=0, pady=10)
         
         var_name = StringVar(value="new_preset")
         var_command = StringVar(value="ffmpeg_path -i input command output -y")
@@ -71,22 +92,29 @@ class QConvertSettings(Tk):
 
     def ffmpeg_page(self, root):
         page = Frame(root)
-        page.pack()
-        Label(page, text = 'FFMPEG Settings').pack()
+        
+        Label(page, text = 'FFMPEG Settings', font=title_font).grid(pady=10)
 
-        Button(page, text = 'Download FFMPEG', command=lambda:webbrowser.open("https://ffmpeg.org/download.html")).pack()
+        Button(page, text = 'Download FFMPEG', command=lambda:webbrowser.open("https://ffmpeg.org/download.html")).grid()
 
-        self.var_path = StringVar(value=config_functions.get_ffmpeg_path())
-        self.path_ent = Entry(page, textvariable = self.var_path).pack(expand=True)
+        qc_config = config_functions.get_qconvert_config()
+        self.var_ffmpeg_path = StringVar(value=qc_config['ffmpeg_executable'])
+        self.path_ffmpeg_ent = Entry(page, textvariable = self.var_ffmpeg_path).grid(row=2, column=0)
+        Button(page, text = 'Set FFMPEG Path', command=lambda:config_functions.set_config_entry("ffmpeg_executable", self.var_ffmpeg_path.get())).grid(row=2, column=1)
+
+        self.var_ffprobe_path = StringVar(value=qc_config['ffprobe_executable'])
+        self.path_ffprobe_ent = Entry(page, textvariable = self.var_ffprobe_path).grid(row=3, column=0)
+        Button(page, text = 'Set FFPROBE Path', command=lambda:config_functions.set_config_entry("ffprobe_executable", self.var_ffprobe_path.get())).grid(row=3, column=1)
 
         #Button(page, text = 'Browse', command=self.browse).pack()
-        Button(page, text = 'Set FFMPEG Path', command=lambda:config_functions.set_ffmpeg_path(self.var_path.get())).pack()
-        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack(pady=10)
+        Button(page, text = 'Back', command=lambda:self.change_page(3)).grid(pady=10)
+
+        page.grid()
 
     def about_page(self, root):
         page = Frame(root)
         page.pack()
-        Label(page, text = 'QConvert').pack()
+        Label(page, text = 'About', font=title_font).pack(pady=10)
         Label(page, text = 'version 0.3').pack()
         Button(page, text = 'Github', command=lambda:webbrowser.open("https://github.com/samytichadou/qconvert")).pack()
         Button(page, text = 'Donate', command=lambda:webbrowser.open("https://ko-fi.com/tonton_blender")).pack()
@@ -115,18 +143,7 @@ class QConvertSettings(Tk):
     def quit():
         root.destroy()
 
-# tk program
-root = Tk()
 
-# icons
-qc_icon_photo = PhotoImage(file = os.path.join(global_variables.qc_icons_dir, "qc_icon.png"))
-
-# set and start
-root.iconphoto(False, qc_icon_photo)
-#root.iconbitmap(os.path.join(global_variables.qc_icons_dir, "qconvert_convert.ico"))
-root.minsize(300, 5)
-root.resizable(0,0)
-root.title('Settings')
 
 myapp = QConvertSettings(root)
 root.mainloop()

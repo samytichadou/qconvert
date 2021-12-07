@@ -1,4 +1,5 @@
 {
     "ffmpeg_executable":"",
+    "ffprobe_executable":"",
     "default_extension":".mov"
  }

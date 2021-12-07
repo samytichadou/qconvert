@@ -11,6 +11,10 @@ def get_ffmpeg_path():
     else:
         return ""
 
+def get_qconvert_config():
+    config_dataset = json_functions.read_json(global_variables.qc_config_filepath)
+    return config_dataset
+
 def set_ffmpeg_path(filepath):
     config_file = global_variables.qc_config_filepath
     config_dataset = json_functions.read_json(config_file)
@@ -18,6 +22,16 @@ def set_ffmpeg_path(filepath):
     json_functions.create_json_file(config_dataset, config_file)
 
     showinfo(message='FFMPEG path set to : %s' % filepath)
+
+    return True
+
+def set_config_entry(identifier, entry_value):
+    config_file = global_variables.qc_config_filepath
+    config_dataset = json_functions.read_json(config_file)
+    config_dataset[identifier] = entry_value
+    json_functions.create_json_file(config_dataset, config_file)
+
+    showinfo(message='%s set to %s' % (identifier, entry_value))
 
     return True
 

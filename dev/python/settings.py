@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-from tkinter import *
 import os
 import webbrowser
 import config_functions
 import json_functions
 import global_variables
+from tkinter import *
 from tkinter.filedialog import askopenfilename
 
 class QConvertSettings(Tk):
@@ -14,10 +14,10 @@ class QConvertSettings(Tk):
         page.pack()
 
         Button(page, text = 'Manage Presets', command=lambda:self.change_page(0)).pack()
-        Button(page, text = 'Set FFMPEG Path', command=lambda:self.change_page(1)).pack()
+        Button(page, text = 'FFMPEG Settings', command=lambda:self.change_page(1)).pack()
         Button(page, text = 'Open Configuration Folder', command=lambda:config_functions.open_folder(global_variables.qc_dir)).pack()
         Button(page, text = 'About', command=lambda:self.change_page(2)).pack()
-        Button(page, text = 'Quit', command = quit).pack()
+        Button(page, text = 'Quit', command = quit).pack(pady=10)
 
     def manage_presets_page(self, root):
         page = Frame(root)
@@ -28,7 +28,7 @@ class QConvertSettings(Tk):
         Label(page, text = 'Modify Preset').pack()
         Label(page, text = 'Apply Presets to Right Click Entries').pack()
         Button(page, text = 'Open Preset Folder', command=lambda:config_functions.open_folder(global_variables.qc_presets_dir)).pack()
-        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack()
+        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack(pady=10)
 
     def create_preset_page(self, root):
         page = Frame(root)
@@ -58,28 +58,30 @@ class QConvertSettings(Tk):
         Label(page, text = '"input"/"output" for file in/out').grid(sticky='w')
         Label(page, text = '"-y" at the end to automatically overwrite file').grid(sticky='w')
         
-        Button(page, text = 'Back', command=lambda:self.change_page(0)).grid(row=11, column=0)
+        Button(page, text = 'Back', command=lambda:self.change_page(0)).grid(row=11, column=0, pady=10)
         Button(page, text = 'Create', command=lambda:json_functions.create_preset(
             var_name.get(),
             var_command.get(),
             var_extension.get(),
             var_suffix.get(),
             var_prefix.get(),
-        )).grid(row=11, column=1)
+        )).grid(row=11, column=1, pady=10)
 
         page.grid()
 
     def ffmpeg_page(self, root):
         page = Frame(root)
         page.pack()
-        Label(page, text = 'Set FFMPEG').pack()
+        Label(page, text = 'FFMPEG Settings').pack()
+
+        Button(page, text = 'Download FFMPEG', command=lambda:webbrowser.open("https://ffmpeg.org/download.html")).pack()
 
         self.var_path = StringVar(value=config_functions.get_ffmpeg_path())
         self.path_ent = Entry(page, textvariable = self.var_path).pack(expand=True)
 
         #Button(page, text = 'Browse', command=self.browse).pack()
         Button(page, text = 'Set FFMPEG Path', command=lambda:config_functions.set_ffmpeg_path(self.var_path.get())).pack()
-        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack()
+        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack(pady=10)
 
     def about_page(self, root):
         page = Frame(root)
@@ -88,7 +90,7 @@ class QConvertSettings(Tk):
         Label(page, text = 'version 0.3').pack()
         Button(page, text = 'Github', command=lambda:webbrowser.open("https://github.com/samytichadou/qconvert")).pack()
         Button(page, text = 'Donate', command=lambda:webbrowser.open("https://ko-fi.com/tonton_blender")).pack()
-        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack()
+        Button(page, text = 'Back', command=lambda:self.change_page(3)).pack(pady=10)
 
     def change_page(self, page_index):
         global root

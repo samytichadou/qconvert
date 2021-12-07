@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
 from tkinter import *
+import os
 import webbrowser
 import config_functions
 import json_functions
 import global_variables
 from tkinter.filedialog import askopenfilename
 
-class QConvertSetFFMPEG(Tk):
+class QConvertSettings(Tk):
     def __init__(self, root):
         page = Frame(root)
         page.pack()
@@ -25,6 +26,7 @@ class QConvertSetFFMPEG(Tk):
         Label(page, text = 'Manage Presets').pack()
         Button(page, text = 'Create Preset', command=lambda:self.change_page(4)).pack()
         Label(page, text = 'Modify Preset').pack()
+        Label(page, text = 'Apply Presets to Right Click Entries').pack()
         Button(page, text = 'Open Preset Folder', command=lambda:config_functions.open_folder(global_variables.qc_presets_dir)).pack()
         Button(page, text = 'Back', command=lambda:self.change_page(3)).pack()
 
@@ -111,10 +113,18 @@ class QConvertSetFFMPEG(Tk):
     def quit():
         root.destroy()
 
-# set and start
+# tk program
 root = Tk()
+
+# icons
+qc_icon_photo = PhotoImage(file = os.path.join(global_variables.qc_icons_dir, "qc_icon.png"))
+
+# set and start
+root.iconphoto(False, qc_icon_photo)
+#root.iconbitmap(os.path.join(global_variables.qc_icons_dir, "qconvert_convert.ico"))
 root.minsize(300, 5)
 root.resizable(0,0)
 root.title('Settings')
-myapp = QConvertSetFFMPEG(root)
+
+myapp = QConvertSettings(root)
 root.mainloop()

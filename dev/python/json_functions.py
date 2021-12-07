@@ -1,6 +1,7 @@
 import json
 import os
 import global_variables
+from tkinter.messagebox import showinfo
 
 # read json
 def read_json(filepath):
@@ -24,5 +25,7 @@ def create_preset(name, command, extension, suffix, prefix):
 
     json_filepath = os.path.join(global_variables.qc_presets_dir, "%s.json" % name)
     create_json_file(dataset, json_filepath)
+
+    showinfo(message='%s Preset Created' % name)
     
     return json_filepath

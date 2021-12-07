@@ -69,7 +69,7 @@ class QConvertSettings(Tk):
 
         page.grid()
 
-    def set_ffmpeg_page(self, root):
+    def ffmpeg_page(self, root):
         page = Frame(root)
         page.pack()
         Label(page, text = 'Set FFMPEG').pack()
@@ -97,7 +97,7 @@ class QConvertSettings(Tk):
         if page_index == 0:
             self.manage_presets_page(root)
         elif page_index == 1:
-            self.set_ffmpeg_page(root)
+            self.ffmpeg_page(root)
         elif page_index == 2:
             self.about_page(root)
         elif page_index == 3:
